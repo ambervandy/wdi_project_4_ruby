@@ -56,6 +56,18 @@
 		<% if note.project_id == @project.id %>
 			<p><%= note.note %></p>
 			<i>by: <%= note.author %> on <%= note.date %></i>
+		<% end %>	
+	<% end %>
+
+	</br></br>
+
+	<b>ADD NOTE</b>
+	<%= form_for @note, url: project_notes_path(@project) do |form| %>
+		Name: <%= form.text_field :author %></br></br>
+		Note: <%= form.text_area :note %></br>
+		<%= form.hidden_field(:project_id, :value => @project.id) %></br>
+		<%= form.hidden_field(:date, :value => Time.now.strftime("%m/%d/%Y")) %></br>
+		<%= form.submit %>
 	<% end %>
 </div>
 

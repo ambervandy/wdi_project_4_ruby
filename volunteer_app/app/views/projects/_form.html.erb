@@ -1,0 +1,11 @@
+<%= form_for @project do |form| %>
+	Name: <%= form.text_field :name %></br>
+	Program Area: <%= form.text_field :program_area %></br>
+	Location: <%= form.text_field :location %></br>
+	Date: <%= form.text_field :date %></br>
+	Time Start: <%= form.text_field :start_time %></br>
+	Time End: <%= form.text_field :end_time %></br>
+	Description: <%= form.text_area :description %></br>
+	Number of Volunteers Needed: <%= form.text_field :num_volunteers %></br>
+	<%= form.submit %>
+<% end %>

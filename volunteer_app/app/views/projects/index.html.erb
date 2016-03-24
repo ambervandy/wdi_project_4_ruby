@@ -1,0 +1,20 @@
+<!-- nav bar from partial -->
+<%= render :partial => 'nav' %>
+
+<h1>All Projects</h1>
+
+<%= button_to "NEW PROJECT", new_project_path, :id => "new_project_button", :method => :get %>
+
+<!-- iterate and list all projects -->
+<div id="project_container">
+	<% @projects.sort {|a, b| a.date <=> b.date }.each do |project| %>
+		<div class="project">
+			<h3><%= link_to project.name, project_path(project.id) %></h3>
+			<span><%= project.location %></span>
+			<p><%= project.date %></p>
+			<i><%= project.start_time %> - <%= project.end_time %></i></br>
+			<b>VOLUNTEERS NEEDED: <%= project.num_volunteers - project.volunteers.length %></b>
+		</div></br></br>
+	<% end %>
+</div>
+

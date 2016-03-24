@@ -1,0 +1,72 @@
+<!-- nav bar from partial -->
+<%= render :partial => 'nav' %>
+
+<h1><%= @project.name %></h1>
+
+<span><%= @project.location %></span>
+
+<div id="project_info">
+	<div>
+		<b>VOLUNTEERS BOOKED:</b>
+		<p><%= @project.volunteers.length %> / <%= @project.num_volunteers %></p>
+	<div>
+
+	<div>
+		<b>VOLUNTEERS</b>
+		<ul>
+			<% @project.volunteers.each do |volunteer| %>
+				<li><%= volunteer.first_name %> <%= volunteer.last_name %></li>
+				<form action="/projects/<%= @project.id %>/remove_volunteer" method="POST">
+					<input type="hidden" name="_method" value="DELETE">
+					<input type="hidden" name="itemId" value="<%= volunteer.id %>">
+					<input type="submit" value="REMOVE">
+				</form>
+			<% end %>
+		</ul>	
+	</div>
+
+	<div>
+		<b><%= @project.date %></b>
+		<i><%= @project.start_time %> - <%= @project.end_time %></i>
+	</div>
+</div>
+
+<div>
+	<p><%= @project.description %></p>
+</div>
+
+<div>
+	<b>ADD A VOLUNTEER</b>
+	<form action="/projects/<%= @project.id %>/add_volunteer" method="POST">
+		<input type="hidden" name="_method" value="PUT">
+		<select name="volunteer_id">
+			<% @volunteers.each do |volunteer| %>
+				<% unless @project.volunteers.include?(volunteer) %>
+				<option value="<%= volunteer.id %>"><%= volunteer.first_name %> <%= volunteer.last_name %></option>
+				<% end %>
+			<% end %>
+		</select></br></br>
+		<input type="submit" value="ADD">	
+	</form>
+</div>	
+
+<div id="button_container">
+	<%= button_to "EDIT", edit_project_path(@project.id), :id => "new_project_button", :method => :get %>
+	<%= button_to "DELETE", project_path(@project.id), :id => "new_project_button", :method => :delete %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

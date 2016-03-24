@@ -48,12 +48,22 @@
 		</select></br></br>
 		<input type="submit" value="ADD">	
 	</form>
-</div>	
+</div>
+
+<div>
+	<b>PROJECT NOTES</b>
+	<% @notes.each do |note| %>
+		<% if note.project_id == @project.id %>
+			<p><%= note.note %></p>
+			<i>by: <%= note.author %> on <%= note.date %></i>
+	<% end %>
+</div>
 
 <div id="button_container">
 	<%= button_to "EDIT", edit_project_path(@project.id), :id => "new_project_button", :method => :get %>
 	<%= button_to "DELETE", project_path(@project.id), :id => "new_project_button", :method => :delete %>
 </div>
+
 
 
 

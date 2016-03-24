@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
 
 	def show
 		@volunteers = Volunteer.all
+		@notes = Note.all
 	end
 
 	def new

@@ -1,0 +1,127 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.nav {
+	list-style: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 2em 0 2em 0;
+	font-size: 12px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+.nav > li {
+	display: inline-block;
+	width: 19.3%;
+	text-align: center;
+	padding: 1em 0 1em 0;
+	background-color: #ece8e4;
+}
+
+.nav > li:hover {
+	background-color: white;
+}
+
+.nav > li:hover > a {
+	color: #e73821;
+}
+
+h1 {
+	margin: 4em 0 2em 0;
+	text-align: center;
+	color: #3b3b3b;
+}
+
+#button_div {
+	margin: 0 0 3em 5%;
+}
+
+#new_project_button {
+	width: 40%;
+	background-color: #e73821;
+	padding: 1em;
+	border-style: none;
+	color: white;
+}
+
+#new_project_button:hover {
+	background-color: #a2382a;
+}
+
+.project {
+	margin: 0 5% 0 5%;
+	padding: 0.1em 0.5em 0.9em 0.7em;
+	background-color: #f5f5f5;
+}
+
+#project_b {
+	font-size: 12px;
+}
+
+#project_h3 {
+	font-size: 20px;
+	color: #3b3b3b;
+}
+
+.project > * {
+	color: #3b3b3b;
+}
+
+.project > span, p, i, b {
+	line-height: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

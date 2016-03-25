@@ -1,14 +1,16 @@
 <!-- nav bar from partial -->
 <%= render :partial => 'nav' %>
 
-<h1>All Volunteers</h1>
+<h1>ALL VOLUNTEERS</h1>
 
-<%= button_to "NEW VOLUNTEER", new_volunteer_path, :id => "new_volunteer_button", :method => :get %>
+<div id="button_div">
+	<%= button_to "NEW VOLUNTEER", new_volunteer_path, :id => "new_project_button", :method => :get %>
+</div>
 
 <!-- iterate and list all volunteers -->
-<div id="volunteer_container">
+<div id="project_container">
 	<% @volunteers.sort { |a, b| a.first_name <=> b.first_name }.each do |volunteer| %>
-		<div class="volunteers">
+		<div class="project">
 			<h3><%= link_to volunteer.first_name + ' ' + volunteer.last_name, volunteer_path(volunteer.id) %></h3>
 			<p><%= volunteer.area_interest %></p>
 		</div></br></br>

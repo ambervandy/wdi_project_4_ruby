@@ -42,6 +42,16 @@ h1 {
 	color: #3b3b3b;
 }
 
+#project_info {
+	margin: 2em 0 0 0;
+}
+
+#project_info > * {
+	margin: 2em 5% 2em 5%;
+	padding: 1em 0.5em 1em 1em;
+	background-color: #f5f5f5;
+}
+
 #button_div {
 	margin: 0 0 3em 5%;
 }
@@ -52,6 +62,68 @@ h1 {
 	padding: 1em;
 	border-style: none;
 	color: white;
+	margin-bottom: 2em;
+}
+
+#first > * {
+	line-height: 150%;
+}
+
+#second > ul > form {
+	margin-bottom: 1em;
+	display: inline-block;
+}
+
+#second > ul > form > input[type='submit'] {
+	padding: 0.5em;
+	background-color: #e73821;
+	border-style: none;
+	color: white;
+	font-size: 9px;
+}
+
+#second > ul > form > input[type='submit']:hover {
+	background-color: #a2382a;
+}
+
+#description {
+	padding: 1em;
+}
+
+#description > p {
+	line-height: 150%;
+}
+
+#select {
+	text-align: center;
+}
+
+form > select {
+	-webkit-appearance: none;
+	margin-top: 2em;
+	width: 60%;
+	padding: 1em;
+	text-align-last:center;
+	background-color: white;
+}
+
+form > select:hover {
+	background-color: #a9a397;
+	color: white;
+}
+
+#select > form > input[type='submit'] {
+	padding: 0.5em;
+	width: 30%;
+	background-color: #4eb5c4;
+	border-style: none;
+	color: white;
+	font-size: 12px;
+	margin-bottom: 2em;
+}
+
+#select > form > input[type='submit']:hover {
+	background-color: #2f6c75;
 }
 
 #new_project_button:hover {
@@ -81,14 +153,52 @@ h1 {
 	line-height: 30%;
 }
 
+#button_container {
+	width: 100%;
+	text-align: center;
+}
 
+.notes > * {
+	margin: 2em;
+}
 
+.notes > #notes > #individual_note {
+	padding: 0.6em 1em 1em 1em;
+	background-color: white;
+	margin: 0 0 1em 0;
+}
 
+.notes > div > #individual_note > p {
+	line-height: 150%;
+}
 
+.notes > div > #individual_note > i {
+	font-size: 12px;
+}
 
+.notes > #note_form {
+	font-size: 12px;
+	text-align: center;
+}
 
+#note_form > form > input[type="text"] {
+	width: 90%;
+	padding: 1em;
+}
 
+#note_form > form > input[type="submit"] {
+	padding: 0.7em;
+	width: 40%;
+	background-color: #4eb5c4;
+	border-style: none;
+	color: white;
+	font-size: 12px;
+	margin-bottom: 2em;
+}
 
+#note_form > form > input[type="submit"]:hover {
+	background-color: #2f6c75;
+} 
 
 
 

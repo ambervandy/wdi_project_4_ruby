@@ -3,72 +3,78 @@
 
 <h1><%= @project.name %></h1>
 
-<span><%= @project.location %></span>
-
 <div id="project_info">
-	<div>
-		<b>VOLUNTEERS BOOKED:</b>
-		<p><%= @project.volunteers.length %> / <%= @project.num_volunteers %></p>
-	<div>
 
-	<div>
-		<b>VOLUNTEERS</b>
+	<div id="first">
+		<span>LOCATION: <%= @project.location %></span></br>
+		<b><%= @project.date %></b></br>
+		<i><%= @project.start_time %> - <%= @project.end_time %></i>
+	</div>
+
+	<div id="second">
+		<b>VOLUNTEERS BOOKED: &nbsp;&nbsp; <%= @project.volunteers.length %> / <%= @project.num_volunteers %></b>
 		<ul>
 			<% @project.volunteers.each do |volunteer| %>
-				<li><%= volunteer.first_name %> <%= volunteer.last_name %></li>
+				<li><%= link_to volunteer.first_name + ' ' + volunteer.last_name, volunteer_path(volunteer.id) %></li>
 				<form action="/projects/<%= @project.id %>/remove_volunteer" method="POST">
 					<input type="hidden" name="_method" value="DELETE">
 					<input type="hidden" name="itemId" value="<%= volunteer.id %>">
-					<input type="submit" value="REMOVE">
+					<input type="submit" value="REMOVE" id="remove">
 				</form>
 			<% end %>
 		</ul>	
 	</div>
 
-	<div>
-		<b><%= @project.date %></b>
-		<i><%= @project.start_time %> - <%= @project.end_time %></i>
+	<div id="description">
+		<b>PROJECT DESCRIPTION</b>
+		<p><%= @project.description %></p>
 	</div>
-</div>
 
-<div>
-	<p><%= @project.description %></p>
-</div>
-
-<div>
-	<b>ADD A VOLUNTEER</b>
-	<form action="/projects/<%= @project.id %>/add_volunteer" method="POST">
-		<input type="hidden" name="_method" value="PUT">
-		<select name="volunteer_id">
-			<% @volunteers.each do |volunteer| %>
-				<% unless @project.volunteers.include?(volunteer) %>
-				<option value="<%= volunteer.id %>"><%= volunteer.first_name %> <%= volunteer.last_name %></option>
+	<div id="select">
+		<b></b>
+		<form id="select" action="/projects/<%= @project.id %>/add_volunteer" method="POST">
+			<input type="hidden" name="_method" value="PUT">
+			<select name="volunteer_id">
+				<option selected="selected">ADD VOLUNTEER TO PROJECT</option>
+				<% @volunteers.each do |volunteer| %>
+					<% unless @project.volunteers.include?(volunteer) %>
+					<option value="<%= volunteer.id %>"><%= volunteer.first_name %> <%= volunteer.last_name %></option>
+					<% end %>
 				<% end %>
+			</select></br></br>
+			<input type="submit" value="ADD">	
+		</form>
+	</div>
+
+	<div class="notes">
+		<b>PROJECT NOTES</b>
+		<div id="notes">
+			<% @notes.each do |note| %>
+				<div id="individual_note">
+					<% if note.project_id == @project.id %>
+						<p><%= note.note %></p>
+						<i>by: <%= note.author %> on <%= note.date %></i>
+					<% end %>
+				</div>	
 			<% end %>
-		</select></br></br>
-		<input type="submit" value="ADD">	
-	</form>
-</div>
+		</div>
+	</div>	
 
-<div>
-	<b>PROJECT NOTES</b>
-	<% @notes.each do |note| %>
-		<% if note.project_id == @project.id %>
-			<p><%= note.note %></p>
-			<i>by: <%= note.author %> on <%= note.date %></i>
-		<% end %>	
-	<% end %>
+	<div class="notes">
+		<b>ADD NOTE</b>
+		<div id="note_form">
+			<%= form_for @note, url: project_notes_path(@project) do |form| %>
+				Name:</br>
+				<%= form.text_field :author %></br></br>
+				Note:</br>
+				<%= form.text_field :note %></br>
+				<%= form.hidden_field(:project_id, :value => @project.id) %></br>
+				<%= form.hidden_field(:date, :value => Time.now.strftime("%m/%d/%Y")) %></br>
+				<%= form.submit "ADD NOTE" %>
+			<% end %>
+		</div>
+	</div>
 
-	</br></br>
-
-	<b>ADD NOTE</b>
-	<%= form_for @note, url: project_notes_path(@project) do |form| %>
-		Name: <%= form.text_field :author %></br></br>
-		Note: <%= form.text_area :note %></br>
-		<%= form.hidden_field(:project_id, :value => @project.id) %></br>
-		<%= form.hidden_field(:date, :value => Time.now.strftime("%m/%d/%Y")) %></br>
-		<%= form.submit %>
-	<% end %>
 </div>
 
 <div id="button_container">

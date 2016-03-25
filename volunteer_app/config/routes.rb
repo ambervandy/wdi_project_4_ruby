@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # root
-  root 'static#index'
+  root 'projects#index'
 
   # volunteer resources
   resources :volunteers do

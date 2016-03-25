@@ -53,7 +53,8 @@ h1 {
 }
 
 #button_div {
-	margin: 0 0 3em 5%;
+	margin: 0 0 3em 0;
+	text-align: center;
 }
 
 #new_project_button {
@@ -86,6 +87,10 @@ h1 {
 	background-color: #a2382a;
 }
 
+#second > ul > form > input[type='submit']:active {
+	background-color: #821e11;
+}
+
 #description {
 	padding: 1em;
 }
@@ -112,6 +117,11 @@ form > select:hover {
 	color: white;
 }
 
+form > select:active {
+	background-color: #90846c;
+	color: white;
+}
+
 #select > form > input[type='submit'] {
 	padding: 0.5em;
 	width: 30%;
@@ -126,13 +136,21 @@ form > select:hover {
 	background-color: #2f6c75;
 }
 
+#select > form > input[type='submit']:active {
+	background-color: #1c4c53;
+}
+
 #new_project_button:hover {
 	background-color: #a2382a;
 }
 
+#new_project_button:active {
+	background-color: #872315;
+}
+
 .project {
 	margin: 0 5% 0 5%;
-	padding: 0.1em 0.5em 0.9em 0.7em;
+	padding: 0.1em 0.5em 1em 3em;
 	background-color: #f5f5f5;
 }
 
@@ -143,6 +161,10 @@ form > select:hover {
 #project_h3 {
 	font-size: 20px;
 	color: #3b3b3b;
+}
+
+#project_container {
+	width: 100%;
 }
 
 .project > * {
@@ -198,6 +220,10 @@ form > select:hover {
 
 #note_form > form > input[type="submit"]:hover {
 	background-color: #2f6c75;
+}
+
+#note_form > form > input[type="submit"]:active {
+	background-color: #1c4c53;
 } 
 
 #contact, #about, #project_list {
@@ -220,6 +246,10 @@ form > select:hover {
 
 #project_list > ul > li > form > input[type='submit']:hover {
 	background-color: #2f6c75;
+}
+
+#project_list > ul > li > form > input[type='submit']:active {
+	background-color: #1c4c53;
 }
 
 .form {
@@ -248,9 +278,23 @@ form > select:hover {
 	background-color: #2f6c75;
 }
 
+.form > form > input[type="submit"]:active {
+	background-color: #1c4c53;
+}
 
 
+@media (min-width: 700px) {  /* <----------------------- MIN-WIDTH 700px */
 
+	#new_project_button {
+		width: 260px;
+	}
+
+	.project {
+		width: 596px;
+		margin: 0 auto;
+	}
+
+}
 
 
 

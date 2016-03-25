@@ -45,7 +45,7 @@
 		<form action="/volunteers/<%= @volunteer.id %>/add_project" method="POST">
 			<input type="hidden" name="_method" value="PUT">
 			<select name="project_id">
-				<option selected="selected">Add <%= @volunteer.first_name %> to Project</option>
+				<option selected="selected">Add <%= @volunteer.first_name %> to a Project</option>
 				<% @projects.each do |project| %>
 					<% unless @volunteer.projects.include?(project) %>
 					<option value="<%= project.id %>"><%= project.name %></option>

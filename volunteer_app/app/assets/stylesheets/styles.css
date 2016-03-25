@@ -222,8 +222,31 @@ form > select:hover {
 	background-color: #2f6c75;
 }
 
+.form {
+	text-align: center;
+	margin: 0 5% 10em 5%;
+	padding: 3em 0.5em 0.9em 0.7em;
+	background-color: #f5f5f5;
+}
 
+.form > form > input[type="text"] {
+	width: 60%;
+	padding: 1em;
+}
 
+.form > form > input[type="submit"] {
+	padding: 0.7em;
+	width: 40%;
+	background-color: #4eb5c4;
+	border-style: none;
+	color: white;
+	font-size: 12px;
+	margin: 1em 0 2em 0;
+}
+
+.form > form > input[type="submit"]:hover {
+	background-color: #2f6c75;
+}
 
 
 

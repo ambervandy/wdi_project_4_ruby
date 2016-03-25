@@ -119,7 +119,6 @@ projects = Project.create([
 
 
 # ADD VOLUNTEERS TO PROJECTS
-
 projects[0].volunteers.push(volunteers[0], volunteers[2], volunteers[3])
 projects[1].volunteers.push(volunteers[0], volunteers[2])
 projects[2].volunteers.push(volunteers[1], volunteers[3], volunteers[4])

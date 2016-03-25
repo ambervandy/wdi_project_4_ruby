@@ -12,9 +12,8 @@ Rails.application.routes.draw do
     # remove project from volunteer
     member do
       delete 'remove_project'
-    end  
-    # notes resources
-    resources :notes
+    end
+    
   end
 
   # project resouces

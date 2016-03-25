@@ -1,4 +1,4 @@
-# Volunteer Management APP
+# Volunteer Management App
 
 [Link to repo](https://github.com/ambervandy/wdi_project_4_ruby/tree/master/volunteer_app "Link to repo")
 

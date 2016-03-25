@@ -52,10 +52,10 @@
 		<div id="notes">
 			<% @notes.each do |note| %>
 				<div id="individual_note">
-					<% if note.project_id == @project.id %>
+					
 						<p><%= note.note %></p>
 						<i>by: <%= note.author %> on <%= note.date %></i>
-					<% end %>
+				
 				</div>	
 			<% end %>
 		</div>

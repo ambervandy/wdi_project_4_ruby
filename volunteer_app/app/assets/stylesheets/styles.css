@@ -44,11 +44,12 @@ h1 {
 
 #project_info {
 	margin: 2em 0 0 0;
+	width: 100%;
 }
 
 #project_info > * {
 	margin: 2em 5% 2em 5%;
-	padding: 1em 0.5em 1em 1em;
+	padding: 2em;
 	background-color: #f5f5f5;
 }
 
@@ -71,7 +72,8 @@ h1 {
 }
 
 #second > ul > form {
-	margin-bottom: 1em;
+	margin-top: 0.5em;
+	margin-bottom: 2em;
 	display: inline-block;
 }
 
@@ -91,8 +93,8 @@ h1 {
 	background-color: #821e11;
 }
 
-#description {
-	padding: 1em;
+#description, #first, #second {
+	padding: 2em;
 }
 
 #description > p {
@@ -101,6 +103,23 @@ h1 {
 
 #select {
 	text-align: center;
+}
+
+#select > form > input[type='submit'] {
+	padding: 0.7em;
+	width: 40%;
+	background-color: #4eb5c4;
+	border-style: none;
+	color: white;
+	margin-bottom: 2em;
+}
+
+#select > form > input[type='submit']:hover {
+	background-color: #2f6c75;
+}
+
+#select > form > input[type='submit']:active {
+	background-color: #1c4c53;
 }
 
 form > select {
@@ -120,24 +139,6 @@ form > select:hover {
 form > select:active {
 	background-color: #90846c;
 	color: white;
-}
-
-#select > form > input[type='submit'] {
-	padding: 0.5em;
-	width: 30%;
-	background-color: #4eb5c4;
-	border-style: none;
-	color: white;
-	font-size: 12px;
-	margin-bottom: 2em;
-}
-
-#select > form > input[type='submit']:hover {
-	background-color: #2f6c75;
-}
-
-#select > form > input[type='submit']:active {
-	background-color: #1c4c53;
 }
 
 #new_project_button:hover {
@@ -178,10 +179,15 @@ form > select:active {
 #button_container {
 	width: 100%;
 	text-align: center;
+	margin-bottom: 10em;
 }
 
-.notes > * {
-	margin: 2em;
+.notes {
+	padding: 2em;
+}
+
+#notes {
+	margin-top: 1em;
 }
 
 .notes > #notes > #individual_note {
@@ -226,22 +232,22 @@ form > select:active {
 	background-color: #1c4c53;
 } 
 
-#contact, #about, #project_list {
-	padding: 0.3em 1em 1em 1em
-}
-
 #about > div {
 	margin-bottom: 2em;
 }
 
+#project_list, #about, #contact {
+	padding: 1em 2em 2em 2em;
+}
+
 #project_list > ul > li > form > input[type='submit'] {
-	padding: 0.7em;
+	padding: 0.5em;
 	width: 40%;
 	background-color: #4eb5c4;
 	border-style: none;
 	color: white;
 	font-size: 12px;
-	margin-bottom: 2em;
+	margin: 1em 0 2em 0;
 }
 
 #project_list > ul > li > form > input[type='submit']:hover {
@@ -255,7 +261,7 @@ form > select:active {
 .form {
 	text-align: center;
 	margin: 0 5% 10em 5%;
-	padding: 3em 0.5em 0.9em 0.7em;
+	padding: 3em 0.5em 0.9em 0.5em;
 	background-color: #f5f5f5;
 }
 
@@ -293,6 +299,17 @@ form > select:active {
 		width: 596px;
 		margin: 0 auto;
 	}
+
+	.form {
+		width: 600px;
+		margin: 0 auto 10em;
+	}
+
+	#project_info > * {
+		width: 551.625px;
+		margin: 0 auto 2em;
+	}
+
 
 }
 

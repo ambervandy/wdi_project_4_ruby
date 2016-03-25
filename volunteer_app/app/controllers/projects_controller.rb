@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
 
 	def show
 		@volunteers = Volunteer.all
-		@notes = Note.all
+		@notes = Note.where(project_id: params[:id])
 		@note = Note.new
 	end
 

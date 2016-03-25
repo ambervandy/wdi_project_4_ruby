@@ -3,56 +3,60 @@
 
 <h1><%= @volunteer.first_name %> <%= @volunteer.last_name %></h1>
 
-<p>IMG WILL GO HERE<%= @volunteer.img_url %></p>
+<div id="project_info">
 
-<div id="contact">
-	<h3>CONTACT INFO</h3>
-	<p><%= @volunteer.email %></p>
-	<p><%= @volunteer.phone %></p>
-</div>
-
-<div id="about">
-	<h3>ABOUT</h3>
-	<div>
-		<b>AREAS OF INTEREST</b>
-		<p><%= @volunteer.area_interest %></p>
+	<div id="contact">
+		<h3>CONTACT INFO</h3>
+		<p><%= @volunteer.email %></p>
+		<p><%= @volunteer.phone %></p>
 	</div>
-	<div>
-		<b>LANGUAGES SPOKEN</b>
-		<p><%= @volunteer.languages %></p>
+
+	<div id="about">
+		<h3>ABOUT</h3>
+		<div>
+			<b>AREAS OF INTEREST</b>
+			<p><%= @volunteer.area_interest %></p>
+		</div>
+		<div>
+			<b>LANGUAGES SPOKEN</b>
+			<p><%= @volunteer.languages %></p>
+		</div>
 	</div>
-</div>
 
-<div id="project_list">
-	<h3>PROJECT PARTICIPATION</h3>
-	<ul>
-		<% @volunteer.projects.sort { |a, b| b.date <=> a.date }.each do |project| %>
-			<li>
-				<%= project.date %>: <%= link_to project.name, project_path(project.id) %>
-				<form action="/volunteers/<%= @volunteer.id %>/remove_project" method="POST">
-					<input type="hidden" name="_method" value="DELETE">
-					<input type="hidden" name="itemId" value="<%= project.id %>">
-					<input type="submit" value="REMOVE">
-				</form>
-
-			</li>
-		<% end %>
-	</ul>
-
-	<b>Add <%= @volunteer.first_name %> to a project:</b>
-	<form action="/volunteers/<%= @volunteer.id %>/add_project" method="POST">
-		<input type="hidden" name="_method" value="PUT">
-		<select name="project_id">
-			<% @projects.each do |project| %>
-				<% unless @volunteer.projects.include?(project) %>
-				<option value="<%= project.id %>"><%= project.name %></option>
-				<% end %>
+	<div id="project_list">
+		<h3>PROJECT PARTICIPATION</h3>
+		<ul>
+			<% @volunteer.projects.sort { |a, b| b.date <=> a.date }.each do |project| %>
+				<li>
+					<%= project.date %></br>
+					<%= link_to project.name, project_path(project.id) %>
+					<form action="/volunteers/<%= @volunteer.id %>/remove_project" method="POST">
+						<input type="hidden" name="_method" value="DELETE">
+						<input type="hidden" name="itemId" value="<%= project.id %>">
+						<input type="submit" value="REMOVE">
+					</form>
+					</br>
+				</li>
 			<% end %>
-		</select></br></br>
-		<input type="submit" value="ADD">	
-	</form>
-</div>
+		</ul>
+	</div>	
 
+	<div id="select">
+		<form action="/volunteers/<%= @volunteer.id %>/add_project" method="POST">
+			<input type="hidden" name="_method" value="PUT">
+			<select name="project_id">
+				<option selected="selected">Add <%= @volunteer.first_name %> to Project</option>
+				<% @projects.each do |project| %>
+					<% unless @volunteer.projects.include?(project) %>
+					<option value="<%= project.id %>"><%= project.name %></option>
+					<% end %>
+				<% end %>
+			</select></br></br>
+			<input type="submit" value="ADD">	
+		</form>
+	</div>
+
+</div>
 
 <div id="button_container">
 	<%= button_to "EDIT", edit_volunteer_path(@volunteer.id), :id => "new_project_button", :method => :get %>

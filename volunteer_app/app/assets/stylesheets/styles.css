@@ -37,7 +37,7 @@ a:visited {
 }
 
 h1 {
-	margin: 4em 0 2em 0;
+	margin: 5em 0 2em 0;
 	text-align: center;
 	color: #3b3b3b;
 }
@@ -79,7 +79,7 @@ h1 {
 	background-color: #e73821;
 	border-style: none;
 	color: white;
-	font-size: 9px;
+	font-size: 12px;
 }
 
 #second > ul > form > input[type='submit']:hover {
@@ -200,10 +200,27 @@ form > select:hover {
 	background-color: #2f6c75;
 } 
 
+#contact, #about, #project_list {
+	padding: 0.3em 1em 1em 1em
+}
 
+#about > div {
+	margin-bottom: 2em;
+}
 
+#project_list > ul > li > form > input[type='submit'] {
+	padding: 0.7em;
+	width: 40%;
+	background-color: #4eb5c4;
+	border-style: none;
+	color: white;
+	font-size: 12px;
+	margin-bottom: 2em;
+}
 
-
+#project_list > ul > li > form > input[type='submit']:hover {
+	background-color: #2f6c75;
+}
 
 
 
